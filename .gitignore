@@ -1,0 +1,29 @@
+# Ignore abandoned Next.js project
+web/
+
+# Dependencies
+**/node_modules/
+
+# Environment files
+**/.env
+**/.env.*
+
+# Build outputs
+**/dist/
+**/build/
+**/.next/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Coverage
+coverage/
