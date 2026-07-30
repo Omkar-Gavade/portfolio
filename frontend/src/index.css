@@ -1,0 +1,35 @@
+@custom-variant dark (&:where(.dark, .dark *));
+
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 120px;
+}
+
+/* Used by the navbar pill, which scrolls horizontally when the links overflow.
+   The class was already in the markup but never defined, so a scrollbar showed
+   through the pill. */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 35s linear infinite;
+}

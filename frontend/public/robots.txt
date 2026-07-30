@@ -1,0 +1,8 @@
+# Without this file the SPA fallback serves index.html for /robots.txt, which
+# crawlers (and Lighthouse) reject as invalid.
+User-agent: *
+Allow: /
+
+# TODO: replace with your real domain — also update index.html's canonical +
+# og:url and sitemap.xml.
+Sitemap: https://omkargavade.dev/sitemap.xml

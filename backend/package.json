@@ -1,0 +1,37 @@
+{
+  "name": "portfolio-backend",
+  "version": "2.0.0",
+  "description": "Portfolio contact API — Express + MongoDB + Resend",
+  "type": "module",
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "test": "node --test --test-force-exit tests/*.test.js",
+    "mail:smoke": "node scripts/send-test-email.js"
+  },
+  "keywords": [],
+  "author": "Omkar Gavade",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.5.2",
+    "helmet": "^8.1.0",
+    "mongoose": "^8.19.1",
+    "pino": "^9.6.0",
+    "zod": "^3.25.76"
+  },
+  "optionalDependencies": {
+    "nodemailer": "^7.0.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11",
+    "pino-pretty": "^13.0.0",
+    "supertest": "^7.1.1"
+  }
+}

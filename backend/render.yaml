@@ -1,0 +1,47 @@
+# Render blueprint — infrastructure as code for the contact API.
+#
+# Committing this means the service configuration is reviewable and
+# reproducible rather than clicked into a dashboard and forgotten.
+# Secrets are declared with `sync: false`, which tells Render to prompt for
+# them once and never store them in the repository.
+services:
+  - type: web
+    name: portfolio-backend
+    runtime: node
+    plan: starter          # free instances sleep; a cold start delays the first message
+    region: oregon
+    rootDir: backend
+    buildCommand: npm ci
+    startCommand: npm start
+
+    # Liveness, not readiness. Pointing this at /readyz would make Render
+    # restart the instance every time Atlas has a brief hiccup.
+    healthCheckPath: /healthz
+
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: LOG_LEVEL
+        value: info
+      - key: ALLOWED_ORIGINS
+        value: https://your-portfolio.vercel.app
+      - key: MAIL_PROVIDER
+        value: resend
+      - key: MAIL_FROM
+        value: Portfolio Contact <contact@yourdomain.com>
+      - key: MAIL_TO
+        value: omkargavade002@gmail.com
+      - key: MAIL_TIMEOUT_MS
+        value: "8000"
+      - key: MAIL_TOTAL_BUDGET_MS
+        value: "20000"
+      - key: MAIL_MAX_ATTEMPTS
+        value: "3"
+
+      # Secrets — set in the Render dashboard, never committed.
+      - key: MONGO_URI
+        sync: false
+      - key: RESEND_API_KEY
+        sync: false
+      - key: IP_HASH_SALT
+        sync: false

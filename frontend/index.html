@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>Omkar Gavade — Full Stack Developer</title>
+    <meta
+      name="description"
+      content="Omkar Gavade is a full stack developer building fast, scalable, user-focused web applications with React, Node.js, MongoDB and Tailwind CSS."
+    />
+    <meta name="author" content="Omkar Gavade" />
+
+    <!--
+      TODO: https://omkargavade.dev/ is a placeholder. Replace it in the three
+      places below (canonical, og:url) plus public/robots.txt and
+      public/sitemap.xml with your real deployed domain — a wrong canonical
+      tells search engines the wrong page is authoritative.
+    -->
+    <link rel="canonical" href="https://omkargavade.dev/" />
+
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Omkar Gavade" />
+    <meta property="og:title" content="Omkar Gavade — Full Stack Developer" />
+    <meta
+      property="og:description"
+      content="Full stack developer building fast, scalable, user-focused web applications with React, Node.js and MongoDB."
+    />
+    <meta property="og:url" content="https://omkargavade.dev/" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Omkar Gavade — Full Stack Developer" />
+    <meta
+      name="twitter:description"
+      content="Full stack developer building fast, scalable, user-focused web applications."
+    />
+
+    <!-- Applies the saved theme before first paint so dark mode never flashes white. -->
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("theme") === "dark") {
+            document.documentElement.classList.add("dark");
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
