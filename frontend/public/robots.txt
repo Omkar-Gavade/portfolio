@@ -5,4 +5,4 @@ Allow: /
 
 # TODO: replace with your real domain — also update index.html's canonical +
 # og:url and sitemap.xml.
-Sitemap: https://omkargavade.dev/sitemap.xml
+Sitemap: https://www.omkargavade.xyz/sitemap.xml

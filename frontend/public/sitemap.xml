@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  Single-page portfolio, so there is one URL. TODO: replace the domain with
-  your real one (see also index.html canonical/og:url and robots.txt).
--->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
-    <loc>https://omkargavade.dev/</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.omkargavade.xyz/</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
 </urlset>
