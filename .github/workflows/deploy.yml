@@ -5,21 +5,52 @@ on:
     branches:
       - main
 
+concurrency:
+  group: production-deploy
+  cancel-in-progress: true
+
 jobs:
   deploy:
+    name: Deploy to EC2
     runs-on: ubuntu-latest
 
     steps:
-      - name: Deploy to EC2
-        uses: appleboy/ssh-action@v1.2.0
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.2.2
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
+          script_stop: true
           script: |
+            set -e
+
+            echo "======================================="
+            echo "Starting Portfolio Deployment..."
+            echo "======================================="
+
             cd ~/portfolio
-            git pull origin main
-            docker compose down
+
+            echo "Fetching latest code..."
+            git fetch origin
+            git reset --hard origin/main
+
+            echo "Building Docker images..."
             docker compose build
+
+            echo "Starting containers..."
             docker compose up -d
+
+            echo "Waiting for backend..."
+            sleep 10
+
+            echo "Checking backend health..."
+            curl --fail http://127.0.0.1:8080/healthz
+
+            echo "Cleaning unused Docker images..."
             docker image prune -af
+
+            echo "Deployment completed successfully!"
