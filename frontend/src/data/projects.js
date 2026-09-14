@@ -79,6 +79,8 @@ export const projects = [
     media: {
       cover: "/projects/lumora/cover.jpg",
       screenshots: [
+        { src: "/projects/lumora/app-chat.jpg", alt: "Signed-in chat — a question about a sample contract answered with inline citations" },
+        { src: "/projects/lumora/app-documents.jpg", alt: "Documents page — two sample PDFs indexed and ready" },
         { src: "/projects/lumora/features.jpg", alt: "Lumora features — citations, abstention and hybrid search" },
         { src: "/projects/lumora/why-rag.jpg", alt: "Why RAG — a general chatbot's guess next to Lumora's cited answer" },
         { src: "/projects/lumora/privacy.jpg", alt: "Privacy and security commitments" },
@@ -91,7 +93,7 @@ export const projects = [
     },
 
     overview:
-      "Lumora is a private knowledge workspace. You upload documents, Lumora parses, chunks and embeds them in the background, and you chat with them. Answers stream token by token, carry inline citation markers that open the source passage, and are refused rather than invented when retrieval finds nothing relevant. It is built as a TypeScript monorepo — a React SPA, an Express API with an in-process ingestion worker, and a shared package that holds the contract both sides compile against.",
+      "Lumora is a private knowledge workspace. You upload documents, Lumora parses, chunks and embeds them in the background, and you chat with them. Answers stream token by token, carry inline citation markers that tie each claim to its source passage, and are refused rather than invented when retrieval finds nothing relevant. It is built as a TypeScript monorepo — a React SPA, an Express API with an in-process ingestion worker, and a shared package that holds the contract both sides compile against.",
 
     problem:
       "General LLMs have never read your lease, your handbook or last quarter's board deck, so they answer with the most plausible text instead of the correct one. Pasting documents into a chat window does not scale either: context windows are finite, nothing persists, and nothing can be cited. People who sign their name under an answer need to see where it came from.",
@@ -114,7 +116,7 @@ export const projects = [
     features: [
       {
         title: "Citations you can check",
-        body: "Inline [1], [2] markers are tied to the chunk they came from; clicking one opens the source panel on that passage with the document name and page.",
+        body: "Inline [1], [2] markers tie each claim to the retrieved chunk it came from, and citations are validated before the answer is saved.",
       },
       {
         title: "Hybrid retrieval",
@@ -227,6 +229,8 @@ export const projects = [
     media: {
       cover: "/projects/nexusai/cover.jpg",
       screenshots: [
+        { src: "/projects/nexusai/app-chat.jpg", alt: "Signed-in workspace — a question answered with conversation history in the sidebar" },
+        { src: "/projects/nexusai/app-response-modes.jpg", alt: "Response mode menu — single model, synthesis across three or five models, or one chosen model" },
         { src: "/projects/nexusai/response-modes.jpg", alt: "Direct and synthesis response modes" },
         { src: "/projects/nexusai/models.jpg", alt: "Six models across six providers" },
         { src: "/projects/nexusai/orchestration.jpg", alt: "Parallel fan-out and synthesis pipeline" },
