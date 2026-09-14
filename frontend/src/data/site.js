@@ -21,7 +21,7 @@ export const site = {
    * Leave the array empty to fall back to your most recently pushed repos,
    * most-starred first.
    */
-  pinnedRepos: ["mern-trading-platform", "NovaGPT-Fullstack"],
+  pinnedRepos: ["Lumora", "NexusAI", "Vedanjay-power-website"],
   socials: {
     github: "https://github.com/Omkar-Gavade",
     linkedin: "https://www.linkedin.com/in/omkar-gavade/",

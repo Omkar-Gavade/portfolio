@@ -95,13 +95,9 @@ CAPTCHA; there is no authenticated way to read submissions (use Atlas).
 
 | Path | Contents |
 |---|---|
-| `frontend/src/assets/` | `zerodha.png`, `chatgpt.png` — project covers, imported so Vite hashes them. Files under 4 kB are inlined as data URIs |
 | `frontend/public/` | `favicon.svg`, `robots.txt`, `sitemap.xml`, `Omkar_Gavade_CV.pdf` |
-| `frontend/public/projects/<slug>/` | **Convention, not yet created** — screenshots, `demo.mp4`, GIFs |
+| `frontend/public/projects/<slug>/` | Per-project media for `lumora`, `nexusai`, `vedanjay` — `cover.jpg`, screenshots and a `demo.webm` scroll-through, captured from each live site |
 | `frontend/public/certificates/` | **Not yet created** — certificate scans and `logos/` |
-
-`Chat-GPT.webp` and `ChatGPT-Logo.png` in `src/assets/` are unreferenced
-leftovers.
 
 Missing: no screenshots, no demo video, no `og.png` (so link previews are blank
 despite `twitter:card = summary_large_image` being declared).

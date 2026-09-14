@@ -31,8 +31,8 @@ export default function Projects() {
       {/* Header */}
       <div className="max-w-6xl mx-auto">
         <SectionHeader title="My Projects" titleClassName="text-4xl font-bold mb-4">
-          A selection of full-stack projects showcasing scalable architecture,
-          real-time systems, and production-ready UI/UX.
+          A selection of full-stack projects showcasing AI systems, scalable
+          architecture, and production-ready UI/UX.
         </SectionHeader>
       </div>
 
