@@ -95,12 +95,9 @@ CAPTCHA; there is no authenticated way to read submissions (use Atlas).
 
 | Path | Contents |
 |---|---|
-| `frontend/public/` | `favicon.svg`, `robots.txt`, `sitemap.xml`, `Omkar_Gavade_CV.pdf` |
+| `frontend/public/` | `favicon.svg` plus PNG icons and `site.webmanifest`, `robots.txt`, `sitemap.xml`, `og-card.jpg` (1200×630 link preview), `omkar-gavade.jpg` (structured-data photo), `Omkar_Gavade_CV.pdf` |
 | `frontend/public/projects/<slug>/` | Per-project media for `lumora`, `nexusai`, `vedanjay` — `cover.jpg`, screenshots and a `demo.webm` scroll-through, captured from each live site |
-| `frontend/public/certificates/` | **Not yet created** — certificate scans and `logos/` |
-
-Missing: no screenshots, no demo video, no `og.png` (so link previews are blank
-despite `twitter:card = summary_large_image` being declared).
+| `frontend/public/certificates/` | Certificate scans and issuer `logos/` |
 
 ## Troubleshooting
 

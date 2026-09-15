@@ -86,12 +86,21 @@ curl https://<backend>/readyz
 Then submit the real contact form once and confirm the email lands and the
 `contacts` row shows `delivery.status: "sent"`.
 
-## Before going live
+## Search engines
 
-Replace the placeholder domain `https://omkargavade.dev/` in four places:
-`frontend/index.html` (canonical **and** `og:url`), `frontend/public/robots.txt`,
-`frontend/public/sitemap.xml`. A wrong canonical tells search engines the wrong
-page is authoritative.
+`npm run build` pre-renders the page: `scripts/prerender.mjs` renders
+`src/entry-server.js` into `dist/index.html` and injects JSON-LD generated from
+`src/data`, so crawlers get the full content without running JavaScript. The
+client bundle hydrates that HTML.
+
+The domain `https://www.omkargavade.xyz/` lives in `frontend/index.html`
+(canonical, `og:url`, image URLs), `SITE_URL` in `frontend/src/entry-server.js`,
+`frontend/public/robots.txt` and `frontend/public/sitemap.xml` — change them
+together. A wrong canonical tells search engines the wrong page is
+authoritative.
+
+After a content change, bump `lastmod` in the sitemap, then resubmit the
+sitemap and request indexing in Google Search Console.
 
 ## Not deployed
 

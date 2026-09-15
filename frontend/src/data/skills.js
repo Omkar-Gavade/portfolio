@@ -50,6 +50,28 @@ export const skillGroups = [
     ],
   },
   {
+    title: "AI & LLM Engineering",
+    items: [
+      "Retrieval-Augmented Generation (RAG)",
+      "Embeddings & Vector Search",
+      "Hybrid Search (BM25 + Vectors)",
+      "LLM APIs (Gemini, OpenAI, Anthropic)",
+      "Multi-Model Orchestration",
+      "Streaming Responses (SSE)",
+    ],
+  },
+  {
+    title: "TypeScript, Databases & Cloud",
+    items: [
+      "TypeScript",
+      "PostgreSQL & pgvector",
+      "Fastify",
+      "Zod",
+      "Cloudflare Workers",
+      "Vercel",
+    ],
+  },
+  {
     title: "Computer Science Fundamentals",
     wide: true,
     items: [

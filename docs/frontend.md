@@ -8,9 +8,12 @@ React 19 · Vite 7 · Tailwind CSS v4 · Framer Motion. Single page, no router.
 
 ```
 frontend/
-├── index.html              Meta, Open Graph, pre-paint theme script
-├── public/                 favicon.svg · robots.txt · sitemap.xml · CV
+├── index.html              Meta, Open Graph, pre-paint theme script, prerender markers
+├── public/                 icons · manifest · robots.txt · sitemap.xml · og-card · CV
+├── scripts/prerender.mjs   Build step: renders the page + JSON-LD into dist/index.html
 └── src/
+    ├── main.jsx            Hydrates pre-rendered HTML (renders from scratch in dev)
+    ├── entry-server.js     Server render + structured data, used only at build time
     ├── App.jsx             Section order
     ├── sections/           One file per page section
     ├── components/

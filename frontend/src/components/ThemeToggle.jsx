@@ -1,14 +1,28 @@
-import { useState } from "react";
+import { useSyncExternalStore } from "react";
 
 /**
  * The inline script in `index.html` applies the saved theme before first paint,
  * so this reads the current state off `<html>` rather than re-deciding it —
  * that's what keeps the button in sync with what's already on screen.
+ *
+ * The page is pre-rendered without a theme, so the server snapshot is light;
+ * `useSyncExternalStore` swaps in the real value right after hydration instead
+ * of reporting a mismatch.
  */
+const subscribe = (onChange) => {
+  const observer = new MutationObserver(onChange);
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["class"],
+  });
+  return () => observer.disconnect();
+};
+
+const isDark = () => document.documentElement.classList.contains("dark");
+const isDarkOnServer = () => false;
+
 export default function ThemeToggle() {
-  const [dark, setDark] = useState(() =>
-    document.documentElement.classList.contains("dark")
-  );
+  const dark = useSyncExternalStore(subscribe, isDark, isDarkOnServer);
 
   const toggleTheme = () => {
     const next = !dark;
@@ -19,8 +33,6 @@ export default function ThemeToggle() {
     } catch {
       /* private mode — the toggle still works for this session */
     }
-
-    setDark(next);
   };
 
   return (
